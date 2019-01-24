@@ -1,0 +1,13 @@
+{
+    "name": "bslavens/zesta",
+    "description": "home page for real estate service that offers transparent listings services to home owners. The home owner simply requests a zestimate and the zestimate is the list price. No haggling with agents.",
+    "authors": [
+        {
+            "name": "Brad Slavens",
+            "email": "bradslavens@gmail.com"
+        }
+    ],
+    "require": {
+        "vinceg/zillow": "^1.0"
+    }
+}
