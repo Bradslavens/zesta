@@ -12,10 +12,21 @@
      –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <link rel="stylesheet" href="/Skeleton-2.0.4/Skeleton-2.0.4/css/normalize.css">
     <link rel="stylesheet" href="/Skeleton-2.0.4/Skeleton-2.0.4/css/skeleton.css">
+    <link rel="stylesheet" href="/css/custom.css" type="text/css" />
 
     <!-- Favicon
      –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <link rel="icon" type="image/png" href="images/favicon.png">
+    
+    
+    <!--jquery links -->
+    <script   src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous">
+    </script>
+    
+    <!--custom js-->
+    <script type="text/javascript" src="js/custom.js"></script>
 
     <title>zesta</title>
     
@@ -39,11 +50,11 @@
         </div>
         <div class="row">
             <div>
-                <button>How it Works</button>
+                <button id="howItWorks">How it Works</button>
             </div>
         </div>
-        <div class="row">
-            <div>
+        <div class="row howItWorks">
+            <div class="col ">
                 <ol>
                     <li>Click on Request Zestimate</li>
                     <li>Your Zestimate is your list price</li>
@@ -51,24 +62,24 @@
                 </ol>
             </div>
         </div>
-        <div class="row">
-            <div>
-                <button>Get Started</button>
+        <div class="row howItWorks">
+            <div class="col ">
+                <button id="getStarted">Get Started</button>
             </div>
         </div>
-        <div class="ro">
-            <div class="col">
+        <div class="row getStarted">
+            <div class="col ">
                 <p>Please submit your address to receive your Zestimate:</p>
             </div>
         </div>
-        <div class="row">
-            <div class="col">
+        <div class="row getStarted">
+            <div class="col ">
                 <form>
                     <label for="address">Address</label>
                         <input type="text" name="address" placeholder="100 Main St"/>
                     <label for="citystatezip">City, State Zip</label>                        
                         <input type="text" name="citystatezip" placeholder="San Diego, CA 92101"/>
-                    <input type="submit" value="Submit"/>
+                        <input type="submit" value="Submit"/>
                 </form>
             </div>
         </div>
