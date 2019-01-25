@@ -8,6 +8,7 @@
         }
     ],
     "require": {
-        "vinceg/zillow": "^1.0"
+        "vinceg/zillow": "^1.0",
+        "vlucas/phpdotenv": "^3.2"
     }
 }

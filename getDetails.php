@@ -6,6 +6,9 @@ require_once($path . '/vendor/autoload.php');
 
 use Zillow\ZillowClient;
 
+var_dump(getenv(zid));
+die();
+
 $client = new ZillowClient(getenv(zid));
 
 try {
