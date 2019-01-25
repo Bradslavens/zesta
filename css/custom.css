@@ -1,3 +1,15 @@
+html, body {
+    scroll-behavior: smooth;
+}
+
+input[type="submit"]{
+    display: block;
+}
+.spacer {
+    display: block;
+    height: 500px;
+}
+
 .getStarted, .howItWorks {
     display: none;
 }
