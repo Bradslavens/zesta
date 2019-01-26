@@ -57,7 +57,7 @@ $(function()
                 divs += '               <input name="name" type="text" placeholder="Chris Jones">';
                 divs += '               <label for="email">email:</label>';
                 divs += '               <input name="email" type="email" placeholder="myemail@g.com">';
-                divs += '               <input type="submit" value="submit"';
+                divs += '               <input id="reqmore" type="submit" value="submit"';
                 divs += '           </form>';
                 divs += '       </p>';
                 divs += '   </div>';
@@ -65,4 +65,11 @@ $(function()
             $(".container").append(divs);
         });
     })
+    
+    // _____________  Handle request more info form __________________
+    // 
+    $(".container").on("click", "#reqmore", function( event ){
+        event.preventDefault();
+        console.log("request more info submitted.");
+    });
 });
