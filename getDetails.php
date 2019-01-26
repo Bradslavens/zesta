@@ -6,24 +6,29 @@ require_once($path . '/vendor/autoload.php');
 
 use Zillow\ZillowClient;
 
-var_dump(getenv(zid));
-die();
+$dotenv = Dotenv\Dotenv::create(__DIR__);
+$dotenv->load();
 
 $client = new ZillowClient(getenv(zid));
 
+$address = $_GET['address'];
+$citystatezip = $_GET['citystatezip'];
+
 try {
-	$client->GetSearchResults(['address' => $_GET['address'], 'citystatezip' => $_GET['citystatezip']]);
+	$client->GetSearchResults(['address' => $address, 'citystatezip' => $citystatezip ]);
 } catch(Exception $e) {
 	echo $e->getMessage();
 }
 
 if($client->isSuccessful()) {
 	$response = $client->getResponse();
-	// enter address into db  don't forget to sanitize
-	// return zestimate and other details as json
-	return json_encode($response);
+	
+	// __________ enter address into db  don't forget to sanitize
+	// __________ return zestimate and other details as json
+	
+	echo json_encode($response);
 	
 } else {
 	echo $client->getStatusCode() . ':' . $client->getStatusMessage(). PHP_EOL;
-	// return property not found
+	// __________ return property not found
 }

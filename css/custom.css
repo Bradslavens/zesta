@@ -1,7 +1,3 @@
-html, body {
-    scroll-behavior: smooth;
-}
-
 input[type="submit"]{
     display: block;
 }
