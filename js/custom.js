@@ -28,10 +28,7 @@ $(function()
         event.preventDefault();
         console.log("form submitted");
         
-        var address = $("input[name=address").val();
-        var citystatezip = $("input[name=citystatezip").val();
-        
-        $.get("getDetails.php", {address: address, citystatezip: citystatezip})
+        $.get("getDetails.php", $("#submitAddressToZillow").serialize())
         .done(function( data ){
             data = $.parseJSON( data );
             data = data.results.result;
@@ -71,5 +68,23 @@ $(function()
     $(".container").on("click", "#reqmore", function( event ){
         event.preventDefault();
         console.log("request more info submitted.");
+        
+        // _____  send the form to the submit-contact.php script
+        $.post("submit-contact.php", $("#requestMoreInfo").serialize(), function( response ){
+            console.log( response );
+        })
+        .done(function(){
+            var divs =  '<div class="results">';
+                divs += '   <div class="row">';
+                divs += '       <p>';
+                divs += '           Thank You! Your request has been submitted.';
+                divs += '       </p>';
+                divs += '       <p>';
+                divs += '           You will receive an email with all of the details and instructions';
+                divs += '       </p>';
+                divs += '   </div>';
+                divs += '</div>';
+            $(".container").append(divs);
+        });
     });
 });
