@@ -2,16 +2,17 @@ $(function()
 {
     // _______________  Scrolls the page when called ________________
     // 
-    function resetScrollTop(){
-        sp = $("html").scrollTop();
-        $("html").scrollTop(sp + 200);
+    function resetScrollTop(pixs=100){
+        var sp = $("html").scrollTop();
+        console.log(sp);
+        $("html").scrollTop(sp + pixs);
     }
     
     
     // ___________  handle dynamic display ___________________________
     // 
     $("#howItWorks").on("click", function(){
-        resetScrollTop();
+        resetScrollTop(100  );
         $(".howItWorks").toggle(500);
     });
     
@@ -43,7 +44,7 @@ $(function()
                 divs += '   </div>';
                 divs += '</div>';
             $(".container").append(divs);
-            resetScrollTop();
+            resetScrollTop(100);
             // _______ add the form to request more info
              var divs =  '<div class="results">';
                 divs += '   <div class="row">';
@@ -60,6 +61,7 @@ $(function()
                 divs += '   </div>';
                 divs += '</div>';
             $(".container").append(divs);
+            resetScrollTop(300);
         });
     })
     
@@ -85,6 +87,7 @@ $(function()
                 divs += '   </div>';
                 divs += '</div>';
             $(".container").append(divs);
+            resetScrollTop(200);
         });
     });
 });
