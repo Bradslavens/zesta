@@ -35,8 +35,34 @@ $(function()
         .done(function( data ){
             data = $.parseJSON( data );
             data = data.results.result;
-            $(".container").append(data.zpid);
+            // _______ convert to currency
+            var amount = Number(data.zestimate.amount).toLocaleString('en');
+            // console.log(data);
+            var divs =  '<div class="results">';
+                divs += '   <div class="row">';
+                divs += '       <p>';
+                divs += '           Congratulations! The Zestimate for your home is: $' + amount;
+                divs += '       </p>';
+                divs += '   </div>';
+                divs += '</div>';
+            $(".container").append(divs);
             resetScrollTop();
+            // _______ add the form to request more info
+             var divs =  '<div class="results">';
+                divs += '   <div class="row">';
+                divs += '       <p>';
+                divs += '           If you would like to request more information to please provide your name and email address:';
+                divs += '           <form>';
+                divs += '               <label for="name">Name:</label>';     
+                divs += '               <input name="name" type="text" placeholder="Chris Jones">';
+                divs += '               <label for="email">email</label>';
+                divs += '               <input name="email" type="email" placeholder="myemail@g.com">';
+                divs += '               <input type="submit" value="submit"';
+                divs += '           </form>';
+                divs += '       </p>';
+                divs += '   </div>';
+                divs += '</div>';
+            $(".container").append(divs);
         });
     })
 });
